@@ -1,0 +1,639 @@
+/*****************************************************************
+*
+*   SafeHouse v1.0
+*   style.css
+*
+*   PARTE 1
+*
+******************************************************************/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    height:100%;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:#10151b;
+
+    color:#ecf0f1;
+
+    min-height:100vh;
+
+}
+
+/******************************************************
+    CONTENEDOR PRINCIPAL
+******************************************************/
+
+.container{
+
+    width:95%;
+
+    max-width:1100px;
+
+    margin:auto;
+
+    padding:20px;
+
+}
+
+/******************************************************
+    HEADER
+******************************************************/
+
+header{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+}
+
+header h1{
+
+    font-size:38px;
+
+    color:#00d2ff;
+
+    margin-bottom:8px;
+
+}
+
+header p{
+
+    color:#b5bec8;
+
+    font-size:18px;
+
+}
+
+/******************************************************
+    TARJETAS
+******************************************************/
+
+.status-card,
+.clock-card,
+.sensor-info{
+
+    background:#1b242e;
+
+    border-radius:12px;
+
+    padding:20px;
+
+    margin-bottom:20px;
+
+    border:1px solid #293746;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.35);
+
+}
+
+/******************************************************
+    ESTADO
+******************************************************/
+
+.status-card{
+
+    text-align:center;
+
+}
+
+.status-card h2{
+
+    margin-top:15px;
+
+    margin-bottom:10px;
+
+    font-size:28px;
+
+}
+
+.status-card p{
+
+    color:#c8d0d8;
+
+    margin-top:6px;
+
+}
+
+/******************************************************
+    INDICADOR CIRCULAR
+******************************************************/
+
+.status-indicator{
+
+    width:26px;
+
+    height:26px;
+
+    border-radius:50%;
+
+    margin:auto;
+
+    background:#7f8c8d;
+
+    box-shadow:0 0 15px rgba(255,255,255,.25);
+
+}
+
+/******************************************************
+    ESTADOS DEL SISTEMA
+******************************************************/
+
+.status-disarmed{
+
+    background:#2ecc71;
+
+}
+
+.status-armed{
+
+    background:#3498db;
+
+}
+
+.status-alarm{
+
+    background:#e74c3c;
+
+    animation:blinkAlarm .8s infinite;
+
+}
+
+.status-night{
+
+    background:#f39c12;
+
+}
+
+.status-delay{
+
+    background:#9b59b6;
+
+}
+
+/******************************************************
+    RELOJ
+******************************************************/
+
+.clock-display{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+#clockTime{
+
+    font-size:38px;
+
+    font-weight:bold;
+
+    letter-spacing:2px;
+
+}
+
+#clockDate{
+
+    margin-top:6px;
+
+    color:#c9d1d9;
+
+    font-size:16px;
+
+}
+
+.clock-status{
+
+    margin-top:15px;
+
+    text-align:center;
+
+}
+
+/******************************************************
+    GRID BOTONES
+******************************************************/
+
+.controls-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+
+    gap:15px;
+
+    margin-bottom:25px;
+
+}
+
+/******************************************************
+    BOTONES
+******************************************************/
+
+.btn{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    border-radius:8px;
+
+    padding:15px;
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+    transition:.25s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 12px rgba(0,0,0,.35);
+
+}
+
+.btn:active{
+
+    transform:scale(.97);
+
+}
+
+.btn-danger{
+
+    background:#e74c3c;
+
+}
+
+.btn-success{
+
+    background:#27ae60;
+
+}
+
+.btn-warning{
+
+    background:#f39c12;
+
+}
+
+.btn-secondary{
+
+    background:#34495e;
+
+}
+
+/******************************************************
+    SENSORES
+******************************************************/
+
+.sensor-info h3{
+
+    margin-bottom:20px;
+
+    color:#00d2ff;
+
+}
+
+.sensor-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #2e3b4b;
+
+}
+
+.sensor-item:last-child{
+
+    border-bottom:none;
+
+}
+/******************************************************
+    BADGES DE SENSORES
+******************************************************/
+
+.sensor-badge{
+
+    display:inline-block;
+
+    min-width:110px;
+
+    text-align:center;
+
+    padding:6px 12px;
+
+    border-radius:18px;
+
+    font-size:14px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
+}
+
+/* Sensor inactivo */
+
+.sensor-off{
+
+    background:#7f8c8d;
+
+    color:#ffffff;
+
+}
+
+/* Sensor activo */
+
+.sensor-on{
+
+    background:#2ecc71;
+
+    color:#ffffff;
+
+}
+
+/* Sensor disparado */
+
+.sensor-trigger{
+
+    background:#e74c3c;
+
+    color:#ffffff;
+
+    animation:blinkAlarm .7s infinite;
+
+}
+
+/******************************************************
+    WIFI
+******************************************************/
+
+#wifiStatus,
+#wifiEstado{
+
+    font-weight:bold;
+
+}
+
+.wifi-online{
+
+    color:#2ecc71;
+
+}
+
+.wifi-offline{
+
+    color:#e74c3c;
+
+}
+
+/******************************************************
+    CONTADORES
+******************************************************/
+
+#contadorMov,
+#contadorDisparos{
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    color:#00d2ff;
+
+}
+
+/******************************************************
+    FOOTER
+******************************************************/
+
+.footer{
+
+    margin-top:30px;
+
+    text-align:center;
+
+    color:#95a5a6;
+
+    font-size:14px;
+
+}
+
+.footer p{
+
+    margin-top:6px;
+
+}
+
+/******************************************************
+    ANIMACIONES
+******************************************************/
+
+@keyframes blinkAlarm{
+
+    0%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        opacity:.35;
+
+        transform:scale(1.10);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}
+
+/******************************************************
+    EFECTOS
+******************************************************/
+
+.status-card,
+.clock-card,
+.sensor-info{
+
+    transition:.30s;
+
+}
+
+.status-card:hover,
+.clock-card:hover,
+.sensor-info:hover{
+
+    box-shadow:0 8px 20px rgba(0,0,0,.45);
+
+}
+
+/******************************************************
+    RESPONSIVE
+******************************************************/
+
+@media(max-width:900px){
+
+    .controls-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+}
+
+@media(max-width:650px){
+
+    header h1{
+
+        font-size:30px;
+
+    }
+
+    header p{
+
+        font-size:15px;
+
+    }
+
+    #clockTime{
+
+        font-size:30px;
+
+    }
+
+    .status-card h2{
+
+        font-size:22px;
+
+    }
+
+    .controls-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .btn{
+
+        font-size:17px;
+
+        padding:16px;
+
+    }
+
+    .sensor-item{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:8px;
+
+    }
+
+}
+
+@media(max-width:420px){
+
+    .container{
+
+        width:98%;
+
+        padding:10px;
+
+    }
+
+    header h1{
+
+        font-size:26px;
+
+    }
+
+    #clockTime{
+
+        font-size:26px;
+
+    }
+
+}
+
+/******************************************************
+    CLASES AUXILIARES
+******************************************************/
+
+.hidden{
+
+    display:none;
+
+}
+
+.visible{
+
+    display:block;
+
+}
+
+.center{
+
+    text-align:center;
+
+}
+
+.right{
+
+    text-align:right;
+
+}
+
+.left{
+
+    text-align:left;
+
+}
+
+.bold{
+
+    font-weight:bold;
+
+}
+
+/******************************************************
+    FIN DEL ARCHIVO
+******************************************************/
